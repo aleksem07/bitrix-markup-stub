@@ -1,0 +1,6 @@
+.filter_category.category
+
+  for category in categories
+    label.category_label(for=category)
+      input.category_input(type='checkbox', id=category, name='categories[]', value=category)
+      | #{category[0].toUpperCase() + category.slice(1)}

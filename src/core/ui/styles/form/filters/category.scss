@@ -1,0 +1,25 @@
+@use '../core/lib/scss' as lib;
+
+.filter_category {
+  @include lib.flex-row;
+  align-items: center;
+  gap: 10px;
+}
+
+.category_label {
+  cursor: pointer;
+  min-width: max-content;
+
+  // font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 135%;
+
+  &:has(.category_input:checked) {
+    color: red;
+  }
+}
+
+.category_input {
+  display: none;
+}
