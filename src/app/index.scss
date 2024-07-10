@@ -1,6 +1,7 @@
 @use '../core/config/scss' as config;
 @use '../core/lib/scss' as lib;
 @use '../core/ui/layout';
+@use '../core/ui/styles';
 
 * {
   margin: 0;
@@ -17,7 +18,7 @@
 
   &::-webkit-scrollbar-thumb {
     background-color: config.$colors-black;
-  }    
+  }
 }
 
 html {
