@@ -1,3 +1,8 @@
+.logoa {
+  outline: 5px solid rgba(247, 9, 9, 0.589) !important;
+  outline-offset: -5px;
+}
+
 .layout {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -22,6 +27,11 @@
 
 .layout__footer {
   margin-top: auto;
+}
+
+.logoa {
+  outline: 5px solid rgba(247, 9, 9, 0.589) !important;
+  outline-offset: -5px;
 }
 
 * {
