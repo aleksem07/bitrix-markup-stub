@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/spiks/bitrix-markup-stub.git"
+    "url": "git+https://github.com/aleksem07/bitrix-markup-stub"
   },
   "author": "spiks",
   "license": "ISC",
@@ -38,5 +38,7 @@
     "hygen": "^6.2.11",
     "sass": "^1.66.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "nouislider": "^15.8.1"
+  }
 }
