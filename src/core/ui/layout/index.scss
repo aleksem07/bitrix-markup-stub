@@ -2,13 +2,9 @@
 @use '../core/lib/scss' as lib;
 
 .layout {
-  display: flex;
-  min-height: 200vh;
-  flex-direction: column;
-
   &__header {
-    position: sticky;
-    top: 0;
+    @include lib.flex-row;
+    gap: 16px;
   }
 
   &__main {
@@ -16,6 +12,5 @@
   }
 
   &__footer {
-    margin-top: auto;
   }
 }
