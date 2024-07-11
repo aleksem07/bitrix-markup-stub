@@ -33,14 +33,14 @@
     border-radius: inherit;
     background: linear-gradient(
       180deg,
-      config.$colors-button-offset-light__36,
-      config.$colors-button-offset-dark
+      config.$colors-button_offset_light__36,
+      config.$colors-button_offset_dark
     );
     z-index: -1;
   }
 
   &:has(.category_input:checked) {
-    box-shadow: 0 5px 15px 1px config.$colors-button-offset-light__36;
+    box-shadow: 0 5px 15px 1px config.$colors-button_offset_light__36;
   }
 }
 

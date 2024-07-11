@@ -3,6 +3,7 @@
 .search {
   width: 100%;
   position: relative;
+  grid-area: search;
 }
 
 .search_label {
@@ -13,7 +14,6 @@
   padding-left: 49px;
   position: relative;
   width: 100%;
-  grid-area: search;
 
   background-color: transparent;
   border: 1px solid;
