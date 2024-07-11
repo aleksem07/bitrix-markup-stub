@@ -3,6 +3,10 @@
 @use '../core/ui/layout';
 @use '../core/ui/styles';
 
+@include lib.font('Proxima Nova', 400, 'ProximaNova-Regular');
+@include lib.font('Proxima Nova', 600, 'ProximaNova-Semibold');
+@include lib.font('Proxima Nova', 700, 'ProximaNova-Bold');
+
 * {
   margin: 0;
   padding: 0;
@@ -31,6 +35,7 @@ body {
   margin-inline: 1.5%;
   background-color: config.$colors-background;
   color: config.$colors-white;
+  font-family: config.$font-primary;
 }
 
 .visually-hidden {
