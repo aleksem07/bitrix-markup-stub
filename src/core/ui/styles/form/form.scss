@@ -5,8 +5,8 @@
   @include lib.grid-col;
   grid-template-areas:
     'logo search search categories categories categories'
-    'sliders sliders sliders sliders sliders sort';
-  // 'results results sort'
+    'sliders sliders sliders sliders sliders sort'
+    'results checked checked checked checked sort';
   // 'filters filters  sort';
   grid-template-columns: auto;
   grid-template-rows: auto;
