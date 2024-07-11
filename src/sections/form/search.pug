@@ -1,6 +1,4 @@
 .search
   label.search_label(for='search')
     input.search_input(type='text', id='search', name='search', placeholder='Search for a product, flower, etc')
-    svg.search_svg(width='20' height='20' viewBox='0 0 20 20')
-      use(xlink:href='/assets/icons/default/sprite.svg#search')
-    +svg
+    +icon('20', 'search')

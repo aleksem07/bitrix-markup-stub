@@ -1,10 +1,11 @@
 .filter_category.category
 
-  for category in categories
+  each category in categories
+    - let formattedCategory = category.replace(/-/g, ' ').split(' ').map(word => word[0].toUpperCase() + word.slice(1)).join(' ')
+    
     label.category_label(for=category)
 
-      svg.category_svg(width='20' height='20' viewBox='0 0 20 20')
-        use(xlink:href='/assets/icons/default/sprite.svg#bad-plant-haha')
+      +icon('20', 'bad-plant-haha')
 
       input.category_input(type='checkbox', id=category, name='categories[]', value=category)
-      | #{category[0].toUpperCase() + category.slice(1)}
+      | #{formattedCategory}
