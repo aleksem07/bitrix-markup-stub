@@ -6,8 +6,8 @@
   grid-template-areas:
     'logo search search categories categories categories'
     'sliders sliders sliders sliders sliders sort'
-    'results checked checked checked checked sort';
-  // 'filters filters  sort';
+    'results checked checked checked checked sort'
+    'checkboxes . . . . sort';
   grid-template-columns: auto;
   grid-template-rows: auto;
   gap: 10px;
