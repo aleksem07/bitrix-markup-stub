@@ -1,0 +1,11 @@
+.filter_category.category
+
+  each category in categories
+    - let formattedCategory = category.replace(/-/g, ' ').split(' ').map(word => word[0].toUpperCase() + word.slice(1)).join(' ')
+    
+    label.category_label(for=category)
+
+      +icon('20', 'bad-plant-haha')
+
+      input.category_input(type='checkbox', id=category, name='categories[]', value=category)
+      | #{formattedCategory}

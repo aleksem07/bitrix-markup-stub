@@ -1,0 +1,30 @@
+@use '../core/config/scss' as config;
+
+.search {
+  width: 100%;
+  position: relative;
+}
+
+.search_label {
+}
+
+.search_input {
+  padding-block: 13px;
+  padding-left: 49px;
+  position: relative;
+  width: 100%;
+
+  background-color: transparent;
+  border: 1px solid;
+  border-radius: 10px;
+
+  font-family: config.$font-primary;
+  color: config.$colors-gray;
+
+  & + .icon {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+  }
+}

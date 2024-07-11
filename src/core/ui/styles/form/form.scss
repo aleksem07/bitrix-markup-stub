@@ -1,13 +1,8 @@
 @use '../core/config/scss' as config;
 @use '../core/lib/scss' as lib;
 
-.layout {
-  &__header {
-  }
-
-  &__main {
-  }
-
-  &__footer {
-  }
+.form {
+  @include lib.flex-row;
+  align-items: center;
+  gap: 16px;
 }
