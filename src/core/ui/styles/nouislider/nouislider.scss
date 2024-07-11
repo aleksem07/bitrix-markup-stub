@@ -1,0 +1,51 @@
+@use '../core/config/scss' as config;
+
+h3 + .slider {
+  height: 4px;
+  border: none;
+
+  & .noUi-connect {
+    background: config.$colors-slider_light;
+  }
+
+  & .noUi-connects {
+    background: config.$colors-slider_dark;
+  }
+
+  & .noUi-handle {
+    height: 16px;
+    width: 16px;
+    top: -6px;
+    right: -9px;
+    border-radius: 9px;
+    border: none;
+    box-shadow: none;
+    background: config.$colors-slider_light;
+
+    &::before,
+    &::after {
+      content: none;
+    }
+  }
+
+  .noUi-tooltip {
+    border-radius: 3px;
+    padding: 2px 5px;
+    width: 51px;
+    height: 26px;
+    background-color: config.$colors-slider_dark;
+    color: config.$colors-white;
+    border: none;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      left: 50%;
+      bottom: -35%;
+      transform: rotate(45deg) translate(-50%);
+      background-color: config.$colors-slider_dark;
+    }
+  }
+}

@@ -2,6 +2,7 @@
 @use '../core/lib/scss' as lib;
 @use '../core/ui/layout';
 @use '../core/ui/styles';
+@use '../core/vendors/nouislider/nouislider.min';
 
 @include lib.font('Proxima Nova', 400, 'ProximaNova-Regular');
 @include lib.font('Proxima Nova', 600, 'ProximaNova-Semibold');
