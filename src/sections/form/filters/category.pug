@@ -2,5 +2,9 @@
 
   for category in categories
     label.category_label(for=category)
+
+      svg.category_svg(width='20' height='20' viewBox='0 0 20 20')
+        use(xlink:href='/assets/icons/default/sprite.svg#bad-plant-haha')
+
       input.category_input(type='checkbox', id=category, name='categories[]', value=category)
       | #{category[0].toUpperCase() + category.slice(1)}
