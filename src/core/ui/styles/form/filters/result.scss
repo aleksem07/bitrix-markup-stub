@@ -1,5 +1,11 @@
+@use '../core/config/scss' as config;
+
 .result {
   grid-area: results;
-  outline: 5px solid rgba(2, 90, 9, 0.589);
-  outline-offset: -5px;
+}
+
+.result_title {
+  font-family: config.$font-primary;
+  font-weight: 600;
+  line-height: 135%;
 }
