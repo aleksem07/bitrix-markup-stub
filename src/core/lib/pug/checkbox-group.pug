@@ -1,0 +1,7 @@
+mixin checkbox-group(name, items)
+  .checkboxes_classification.classification
+    h2.classification_title #{name}
+    each item in items
+      if item.trim() !== ''
+        input.classification_input(type='checkbox' id=item name='sort' value=item)
+        label(for=item) #{item}
