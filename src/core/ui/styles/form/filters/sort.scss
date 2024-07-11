@@ -1,5 +1,41 @@
+@use '../core/config/scss' as config;
+@use '../core/lib/scss' as lib;
+
 .sort {
   grid-area: sort;
-  outline: 5px solid rgba(25, 9, 247, 0.589);
-  outline-offset: -5px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.sort_drop {
+  padding: 12px 20px;
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  background-color: config.$colors-background_button;
+  @include lib.border-radius;
+  @include lib.border-green;
+  cursor: pointer;
+  align-self: end;
+}
+
+.sort_radios {
+  padding: 20px;
+  background-color: config.$colors-sort_background;
+  @include lib.border-radius;
+}
+
+.sort_list {
+  @include lib.flex-col;
+  cursor: pointer;
+  display: flex;
+}
+
+.sort_radios {
+  // display: none;
+}
+
+.sort_drop:has(.sort_drop_input:checked) ~ .sort_radios {
+  // display: block;
 }

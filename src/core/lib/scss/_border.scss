@@ -1,6 +1,8 @@
 @use '../core/config/scss' as config;
 
-@mixin green-border {
+@mixin green {
+  position: relative;
+
   &::before {
     content: '';
     position: absolute;
@@ -16,4 +18,8 @@
     );
     z-index: -1;
   }
+}
+
+@mixin radius {
+  border-radius: 10px;
 }

@@ -1,2 +1,12 @@
 .sort
-  h2 sort
+  .sort_drop
+    label.sort_drop_label
+      input.sort_drop_input(type='checkbox')
+      +icon('20', 'filter')
+  .sort_radios
+    h4 Sort by:
+    ul.sort_list
+      each item, index in sort
+        li.sort_item
+          input.sort_input(type='radio' id=item name='sort' value=item checked=index === 0)
+          label(for=item) #{item}

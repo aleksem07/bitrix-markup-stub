@@ -12,7 +12,6 @@
   padding: 12px 20px;
   cursor: pointer;
   min-width: max-content;
-  position: relative;
 
   @include lib.flex-row;
   @include lib.flex-center;
@@ -21,9 +20,8 @@
   font-size: config.$font-size_lg;
   line-height: 135%;
   background-color: config.$colors-background_button;
-  border-radius: 10px;
-
-  @include lib.border-green-border;
+  @include lib.border-radius;
+  @include lib.border-green;
 
   &:has(.category_input:checked) {
     box-shadow: 0 5px 15px 1px config.$colors-button_offset_light__36;
