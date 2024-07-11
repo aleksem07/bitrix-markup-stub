@@ -5,6 +5,7 @@
   @include lib.flex-row;
   align-items: center;
   gap: 10px;
+  grid-area: categories;
 }
 
 .category_label {

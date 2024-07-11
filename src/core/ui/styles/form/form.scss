@@ -2,7 +2,13 @@
 @use '../core/lib/scss' as lib;
 
 .form {
-  @include lib.flex-row;
-  align-items: center;
-  gap: 16px;
+  @include lib.grid-col;
+  grid-template-areas:
+    'logo search categories'
+    'sliders sliders sort';
+  // 'results results sort'
+  // 'filters filters  sort';
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto auto auto;
+  gap: 10px;
 }
