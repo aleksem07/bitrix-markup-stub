@@ -78,6 +78,7 @@
   }
 }
 
-.checkbox_input {
-  display: none;
+.checkbox_label:has(.checkbox_input:focus) {
+  outline: 1px solid config.$colors-white;
+  outline-offset: 2px;
 }
