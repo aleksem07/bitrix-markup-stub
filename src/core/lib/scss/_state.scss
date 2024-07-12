@@ -1,0 +1,13 @@
+@use '../core/config/scss' as config;
+
+@mixin checked {
+  box-shadow: 0 5px 15px 1px config.$colors-button_offset_light__36;
+}
+
+@mixin hover {
+  transition: box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 5px 15px 1px config.$colors-button_offset_light__36;
+  }
+}

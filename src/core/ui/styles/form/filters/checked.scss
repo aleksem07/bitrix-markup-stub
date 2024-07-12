@@ -47,5 +47,7 @@
     &::after {
       transform: translate(-50%, -50%) rotate(-45deg);
     }
+
+    @include lib.state-hover;
   }
 }

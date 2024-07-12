@@ -1,4 +1,5 @@
 @use '../core/config/scss' as config;
+@use '../core/lib/scss' as lib;
 
 h3 + .slider {
   height: 4px;
@@ -21,11 +22,14 @@ h3 + .slider {
     border: none;
     box-shadow: none;
     background: config.$colors-slider_light;
+    cursor: pointer;
 
     &::before,
     &::after {
       content: none;
     }
+
+    @include lib.state-hover;
   }
 
   .noUi-tooltip {
