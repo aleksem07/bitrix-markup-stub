@@ -28,6 +28,4 @@
   }
 }
 
-.category_input {
-  display: none;
-}
+@include lib.state-focus-visible('category');

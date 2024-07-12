@@ -12,3 +12,10 @@
     box-shadow: 0 5px 15px 1px config.$colors-button_offset_light__36;
   }
 }
+
+@mixin focus-visible($name) {
+  .#{$name}_label:has(.#{$name}_input:focus-visible) {
+    outline: 1px solid config.$colors-white;
+    outline-offset: 2px;
+  }
+}
