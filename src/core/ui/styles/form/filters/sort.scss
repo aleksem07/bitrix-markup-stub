@@ -20,6 +20,10 @@
   align-self: end;
 }
 
+.sort_title {
+  margin-bottom: 10px;
+}
+
 .sort_radios {
   padding: 20px;
   background-color: config.$colors-sort_background;
@@ -30,6 +34,7 @@
   @include lib.flex-col;
   cursor: pointer;
   display: flex;
+  gap: 10px;
 }
 
 .sort_radios {
@@ -38,4 +43,24 @@
 
 .sort_drop:has(.sort_drop_input:checked) ~ .sort_radios {
   // display: block;
+}
+
+.sort_label {
+  display: flex;
+  gap: 10px;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  align-items: center;
+  cursor: pointer;
+}
+
+.sort_input {
+  display: none;
+}
+
+.sort_icon {
+}
+
+.sort_input:checked + .sort_icon {
+  @include lib.state-checked;
 }
