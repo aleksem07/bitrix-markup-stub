@@ -1,5 +1,8 @@
 .checkboxes {
   grid-area: checkboxes;
-  outline: 5px solid rgba(247, 9, 190, 0.589);
-  outline-offset: -5px;
+}
+
+.checkbox {
+  display: flex;
+  flex-direction: column;
 }

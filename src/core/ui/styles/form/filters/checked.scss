@@ -1,8 +1,31 @@
+@use '../core/config/scss' as config;
+@use '../core/lib/scss' as lib;
+
 .checked {
   grid-area: checked;
+}
+
+.checked_list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.checked_item {
+  padding: 5px 8px;
+  @include lib.border-radius(20px);
+  background-color: config.$colors_background_button__light;
+}
+
+.checkbox_input:checked .checked_item {
   outline: 5px solid rgba(247, 9, 9, 0.589);
   outline-offset: -5px;
 }
 
-.checked_result {
+.checkboxes:has(.checkbox_input:checked)
+  ~ .checked
+  > .checked_list
+  .checked_item {
+  outline: 5px solid rgba(247, 9, 9, 0.589);
+  outline-offset: -5px;
 }
