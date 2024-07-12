@@ -2,7 +2,6 @@
 @use '../core/lib/scss' as lib;
 
 .checkboxes {
-  width: 234px;
   padding-block: 15px 30px;
   padding-inline: 17px 22px;
   grid-area: checkboxes;
@@ -13,7 +12,7 @@
   background-image: url('/assets/media/plant-big.svg');
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: -100px center;
+  background-position: -125px center;
 }
 
 .checkbox {

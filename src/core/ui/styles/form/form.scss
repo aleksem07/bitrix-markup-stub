@@ -2,6 +2,9 @@
 @use '../core/lib/scss' as lib;
 
 .form {
+  margin: 0 auto;
+  max-width: config.$xl;
+  width: 100%;
   @include lib.grid-col;
   grid-template-areas:
     'logo search search categories categories categories'
@@ -10,7 +13,7 @@
     'checkboxes checked checked checked checked sort'
     'checkboxes . . . . sort'
     'checkboxes . . . . sort';
-  grid-template-columns: auto;
+  grid-template-columns: 243px repeat(4, auto) 217px;
   grid-template-rows: auto;
   gap: 10px;
 }

@@ -1,9 +1,10 @@
 .sliders {
+  width: 100%;
   grid-area: sliders;
   display: flex;
   gap: 25px;
 }
 
 .slider_container {
-  width: 25%;
+  width: 100%;
 }
