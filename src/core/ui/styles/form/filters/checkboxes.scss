@@ -6,6 +6,13 @@
   padding-inline: 17px 22px;
   grid-area: checkboxes;
   background-color: config.$colors-background_button;
+  @include lib.border-radius;
+  @include lib.border-green;
+
+  background-image: url('/assets/media/plant-big.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: -100px center;
 }
 
 .checkbox {
