@@ -9,7 +9,23 @@
           .replace(/>/g, '&gt;');
 
         if (checkbox.checked) {
-          checkedListBox.innerHTML += `<li data-value=${idx}>${itemValue}</li>`;
+          const li = document.createElement("li");
+          const p = document.createElement('p');
+          const button = document.createElement("button");
+
+          li.setAttribute("data-value", idx);
+          li.classList.add('checked_item');
+          button.classList.add('checked_button');
+          p.innerHTML = itemValue;
+
+          li.append(p, button);
+          checkedListBox.appendChild(li);
+          button.onclick = (e) => {
+            e.stopPropagation();
+            checkbox.checked = false;
+            li.remove();
+          }
+
         } else {
           const listItem = checkedListBox.querySelector(
             `li[data-value="${idx}"]`
@@ -21,19 +37,6 @@
         }
       });
     });
-
-    checkedListBox.addEventListener("click", (e) => {
-      const listItem = e.target.closest("li");
-
-      if (listItem) {
-        const checkbox = checkboxes[listItem.dataset.value];
-
-        if (checkbox) {
-          checkbox.checked = !checkbox.checked;
-          listItem.remove();
-        }
-      }
-    })
   }
 
 addCheckedFilters();

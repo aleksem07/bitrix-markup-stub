@@ -12,20 +12,40 @@
 }
 
 .checked_item {
-  padding: 5px 8px;
+  padding-block: 7px;
+  padding-inline: 8px 10px;
+  display: flex;
+  gap: 2.25px;
+  align-items: center;
   @include lib.border-radius(20px);
   background-color: config.$colors_background_button__light;
-}
 
-.checkbox_input:checked .checked_item {
-  outline: 5px solid rgba(247, 9, 9, 0.589);
-  outline-offset: -5px;
-}
+  & button {
+    height: 16px;
+    width: 16px;
+    cursor: pointer;
+    @include lib.border-radius(50%);
+    background-color: config.$colors_button_close;
+    border: 1px solid config.$colors_white;
+    position: relative;
 
-.checkboxes:has(.checkbox_input:checked)
-  ~ .checked
-  > .checked_list
-  .checked_item {
-  outline: 5px solid rgba(247, 9, 9, 0.589);
-  outline-offset: -5px;
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      width: 6px;
+      height: 1px;
+      top: 50%;
+      left: 50%;
+      background-color: config.$colors_white;
+      transform: translate(-50%, -50%);
+    }
+
+    &::before {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+    &::after {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  }
 }
