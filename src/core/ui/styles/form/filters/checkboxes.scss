@@ -2,6 +2,7 @@
 @use '../core/lib/scss' as lib;
 
 .checkboxes {
+  width: 234px;
   padding-block: 15px 30px;
   padding-inline: 17px 22px;
   grid-area: checkboxes;
@@ -39,6 +40,7 @@
   font-weight: 600;
   line-height: 147%;
   color: config.$colors-gray;
+  cursor: pointer;
 
   &::before {
     content: '';
