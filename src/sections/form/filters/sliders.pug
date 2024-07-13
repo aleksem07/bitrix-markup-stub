@@ -5,8 +5,8 @@
   .slider_container.noise_slider
     h3.slider_title Noise
     .slider.noise
-      each item, idx in noise
-          input.noise_input.visually-hidden(type='radio' id=item name='noise' value=item checked=idx === 0)
+      each item in noise
+          input.noise_input.visually-hidden(type='radio' id=item name='noise' value=item)
           label.noise_label(for=item)
     .slider_min_max
       p min

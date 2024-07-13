@@ -66,7 +66,6 @@
 }
 
 .sort_input:checked + .sort_icon {
-  // @include lib.state-checked;
   filter: brightness(100)
     drop-shadow(0 0 10px config.$colors-button_offset_light__36);
 }

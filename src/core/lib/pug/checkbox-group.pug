@@ -1,13 +1,12 @@
 mixin checkbox-group(name, items)
   .checkbox
-    //- h2.checkbox_title #{name}
     label.title_label #{name}
-      input.title_input(type="checkbox") 
+      input.title_input.visually-hidden(type="checkbox") 
 
     ul.checkbox_list
-      each item in items
+      each item, idx in items
         if item.trim() !== ''
           li.checkbox_item
 
             label.checkbox_label(for=item) #{item}
-              input.checkbox_input.visually-hidden(type='checkbox' id=item name='sort' value=item)
+              input.checkbox_input.visually-hidden(type='checkbox' id=item name='sort' value=item checked=idx === 0)

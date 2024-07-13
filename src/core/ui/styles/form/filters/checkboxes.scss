@@ -4,7 +4,7 @@
 .checkboxes {
   margin-top: 23px;
   margin-inline: -2px 6px;
-  padding-block: 13px 30px;
+  padding-block: 13px;
   padding-inline: 10px 22px;
   grid-area: checkboxes;
   background-color: config.$colors-background_button;
@@ -28,6 +28,7 @@
   font-family: config.$font-primary;
   font-weight: 600;
   font-size: config.$font-size_lg;
+  cursor: pointer;
 
   position: relative;
 
@@ -65,9 +66,7 @@
   }
 }
 
-.title_input {
-  // display: none;
-}
+@include lib.state-focus-visible(title);
 
 .checkbox_list {
   display: flex;
@@ -126,7 +125,4 @@
   }
 }
 
-.checkbox_label:has(.checkbox_input:focus-visible) {
-  outline: 1px solid config.$colors-white;
-  outline-offset: 2px;
-}
+@include lib.state-focus-visible(checkbox);
