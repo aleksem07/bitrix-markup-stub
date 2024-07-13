@@ -3,17 +3,19 @@
 
 .form {
   margin: 0 auto;
+  padding-inline: 6px;
   max-width: config.$xl;
   width: 100%;
   @include lib.grid-col;
+
   grid-template-areas:
-    'search search search categories categories categories categories'
-    'sliders sliders sliders sliders sliders sliders sort'
-    'results checked checked checked checked checked sort'
-    'checkboxes checked checked checked checked checked sort'
-    'checkboxes . . . . . sort'
-    'checkboxes . . . . . sort';
-  grid-template-columns: 243px repeat(4, 1fr) 217px;
+    'search search search search search categories categories categories categories categories categories categories'
+    'sliders sliders sliders sliders sliders sliders sliders sliders sliders sliders sliders sort'
+    'results checked checked checked checked checked checked checked checked checked checked sort'
+    'checkboxes checked checked checked checked checked checked checked checked checked checked sort'
+    'checkboxes . . . . . . . . . . sort'
+    'checkboxes . . . . . . . . . . sort';
+  grid-template-columns: 243px repeat(3, 1fr) 141px repeat(6, 1fr) 217px;
   grid-template-rows: auto;
   gap: 10px;
 }

@@ -17,7 +17,7 @@ h3 + .slider {
     height: 16px;
     width: 16px;
     top: -6px;
-    right: -9px;
+    right: -15px;
     border-radius: 9px;
     border: none;
     box-shadow: none;
@@ -33,13 +33,14 @@ h3 + .slider {
   }
 
   .noUi-tooltip {
-    border-radius: 3px;
     padding: 2px 5px;
     width: 51px;
     height: 26px;
+    bottom: 27px;
     background-color: config.$colors-slider_dark;
     color: config.$colors-white;
     border: none;
+    border-radius: 3px;
 
     &::after {
       content: '';

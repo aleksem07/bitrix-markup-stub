@@ -1,6 +1,6 @@
 // =require add-slider.js
 addSlider('price-slider', 'price-slider-value-min', 'price-slider-value-max', {
-  start: [0, 700],
+  start: [0, 600],
   connect: true,
   tooltips: [
     false,
