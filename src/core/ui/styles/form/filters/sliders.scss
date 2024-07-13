@@ -38,3 +38,47 @@
     margin-left: auto;
   }
 }
+
+.noise_slider {
+  margin-top: auto;
+}
+
+.noise {
+  display: flex;
+  justify-content: space-between;
+}
+
+.slider_min_max {
+  display: flex;
+  justify-content: space-between;
+  font-size: config.$font-size;
+  color: config.$colors-gray;
+}
+
+.noise_label {
+  position: relative;
+  cursor: pointer;
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    width: 5px;
+    height: 20px;
+    background-color: config.$colors-yellow;
+
+    .noise_input:checked + & {
+      @include lib.state-checked;
+      filter: brightness(100);
+    }
+  }
+
+  &:nth-of-type(n + 6)::before {
+    background-color: config.$colors-background_button__light;
+  }
+
+  &:nth-of-type(5n)::before {
+    height: 30px;
+  }
+}
