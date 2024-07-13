@@ -1,18 +1,4 @@
 .sliders
-  .slider_container
-    h3.slider_title Price Range
-    #price-slider.slider
-    label.slider_label(for="") 
-      input.slider_input(type="number" id="price-slider-value-min" name="price_min")
-      input.slider_input.slider_input_max(type="number" id="price-slider-value-max" name="price_max")
-  .slider_container
-    h3.slider_title THC, %
-    #thc.slider
-    label.slider_label(for="") 
-      input.slider_input.slider_input_max(type="number" id="thc-value" name="thc_price")
-  .slider_container
-    h3.slider_title CBD, %
-    #cbd.slider
-    label.slider_label(for="") 
-      input.slider_input.slider_input_max(type="number" id="cbd-value" name="cbd_price")
-  
+  +slider(sliderPriceRange.name, sliderPriceRange.id, true)
+  +slider(sliderThc.name, sliderThc.id, false)
+  +slider(sliderCbd.name, sliderCbd.id, false)

@@ -26,7 +26,8 @@
 }
 
 .slider_input {
-  max-width: 45px;
+  padding-inline: 5px;
+  max-width: 50px;
   flex: 0;
   background-color: transparent;
   border: 1px solid config.$colors-button_border;

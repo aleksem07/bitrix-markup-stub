@@ -1,5 +1,5 @@
 // =require add-slider.js
-addSlider('thc', null, 'thc-value', {
+addSlider('thc', null, 'thc-value-max', {
   start: [65],
   connect: 'lower',
   tooltips: { to: value => `${Math.round(value)} %`, from: value => value },
