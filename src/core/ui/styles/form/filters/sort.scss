@@ -30,6 +30,7 @@
   padding: 20px;
   background-color: config.$colors-sort_background;
   @include lib.border-radius;
+  box-shadow: 0 10px 25px 0 rgba(15, 15, 23, 0.63);
 }
 
 .sort_list {
@@ -40,11 +41,11 @@
 }
 
 .sort_radios {
-  display: block;
+  visibility: visible;
 }
 
 .sort_drop:has(.sort_drop_input:checked) ~ .sort_radios {
-  display: none;
+  visibility: hidden;
 }
 
 .sort_label {
