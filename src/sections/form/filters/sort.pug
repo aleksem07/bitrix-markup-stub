@@ -7,7 +7,11 @@
     h3.sort_title Sort by:
     ul.sort_list
       each item in sort
+
+        - var formattedName = item.name.replace(/\s+/g, "");
+
         li.sort_item
-          label.sort_label(for=item.name) #{item.name}
-            input.sort_input.visually-hidden(type='radio' id=item.name name='sort' value=item.name)
+          label.sort_label(for=formattedName) #{item.name}
+            input.sort_input.visually-hidden(type='radio' id=formattedName name='sort' value=item.name)
             +icon('24', item.icon)(class='sort_icon')
+            

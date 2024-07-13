@@ -27,11 +27,15 @@
   font-size: config.$font-size;
 }
 
-.slider_label {
+.slider_label_box {
   padding-block: 4px;
   width: 100%;
   display: flex;
   justify-content: space-between;
+
+  & > .slider_label {
+    margin-left: auto;
+  }
 }
 
 .slider_input {
@@ -44,10 +48,6 @@
   @include lib.border-radius(3px);
   font-size: config.$font-size_sm;
   line-height: 135%;
-
-  &_max {
-    margin-left: auto;
-  }
 }
 
 .noise_slider {
