@@ -5,7 +5,7 @@
     
     label.category_label(for=category)
 
-      +icon('20', 'bad-plant-haha')
+      +icon('20', 'plant')
 
-      input.category_input(type='checkbox', id=category, name='categories[]', value=category)
+      input.category_input.visually-hidden(type='checkbox', id=category, name='categories[]', value=category)
       | #{formattedCategory}

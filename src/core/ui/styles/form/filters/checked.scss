@@ -1,0 +1,62 @@
+@use '../core/config/scss' as config;
+@use '../core/lib/scss' as lib;
+
+.checked {
+  grid-area: checked;
+  width: 100%;
+}
+
+.checked_list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.checked_item {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  padding-block: 5px;
+  padding-inline: 8px 10px;
+  display: flex;
+  gap: 2.25px;
+  align-items: center;
+  @include lib.border-radius(20px);
+  background-color: config.$colors_background_button__light;
+
+  & p {
+    font-size: config.$font-size_sm;
+    font-weight: 400;
+    line-height: 135%;
+  }
+
+  & button {
+    height: 16px;
+    width: 16px;
+    cursor: pointer;
+    @include lib.border-radius(50%);
+    background-color: config.$colors_button_close;
+    border: 1px solid config.$colors_white;
+    position: relative;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      width: 6px;
+      height: 1px;
+      top: 50%;
+      left: 50%;
+      background-color: config.$colors_white;
+      transform: translate(-50%, -50%);
+    }
+
+    &::before {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+    &::after {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+    @include lib.state-hover;
+  }
+}

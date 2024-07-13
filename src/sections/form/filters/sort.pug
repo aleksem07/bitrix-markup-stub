@@ -1,0 +1,13 @@
+.sort
+  .sort_drop
+    label.sort_drop_label
+      input.sort_drop_input.visually-hidden(type='checkbox')
+      +icon('20', 'filter')(class='sort_drop_icon')
+  .sort_radios
+    h3.sort_title Sort by:
+    ul.sort_list
+      each item, index in sort
+        li.sort_item
+          label.sort_label(for=item.name) #{item.name}
+            input.sort_input.visually-hidden(type='radio' id=item.name name='sort' value=item.name checked=index === 0)
+            +icon('24', item.icon)(class='sort_icon')

@@ -1,0 +1,74 @@
+@use '../core/config/scss' as config;
+@use '../core/lib/scss' as lib;
+
+.sort {
+  margin-left: auto;
+  grid-area: sort;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.sort_drop {
+  margin-top: 37px;
+  padding: 12px 20px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: config.$colors-background_button;
+  @include lib.border-radius;
+  @include lib.border-green;
+  align-self: end;
+}
+
+.sort_title {
+  margin-bottom: 10px;
+}
+
+.sort_radios {
+  padding: 20px;
+  background-color: config.$colors-sort_background;
+  @include lib.border-radius;
+  box-shadow: 0 10px 25px 0 rgba(15, 15, 23, 0.63);
+}
+
+.sort_list {
+  @include lib.flex-col;
+  cursor: pointer;
+  display: flex;
+  gap: 9px;
+}
+
+.sort_radios {
+  visibility: visible;
+}
+
+.sort_drop:has(.sort_drop_input:checked) ~ .sort_radios {
+  visibility: hidden;
+}
+
+.sort_label {
+  display: flex;
+  gap: 8px;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  align-items: center;
+  cursor: pointer;
+}
+
+.sort_drop_input {
+}
+
+.sort_drop_icon {
+  cursor: pointer;
+}
+
+.sort_input:checked + .sort_icon {
+  // @include lib.state-checked;
+  filter: brightness(100)
+    drop-shadow(0 0 10px config.$colors-button_offset_light__36);
+}
+
+@include lib.state-focus-visible('sort_drop');

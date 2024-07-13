@@ -1,0 +1,10 @@
+mixin slider(name, id, isMinMax = false)
+  .slider_container
+    h3.slider_title #{name}
+    .slider(id=id)
+    label.slider_label
+      if isMinMax
+        input.slider_input(type="number" id=`${id}-value-min` name=`${id}-value-min`)
+        input.slider_input.slider_input_max(type="number" id=`${id}-value-max` name=`${id}-value-max`)
+      else 
+        input.slider_input.slider_input_max(type="number" id=`${id}-value-max` name=`${id}-value-max`)

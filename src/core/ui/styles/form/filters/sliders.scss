@@ -1,9 +1,98 @@
+@use '../core/config/scss' as config;
+@use '../core/lib/scss' as lib;
+
 .sliders {
+  margin-block: 18px 0;
+  margin-inline: 0;
   grid-area: sliders;
   display: flex;
   gap: 25px;
 }
 
 .slider_container {
-  width: 25%;
+  width: 19%;
+}
+
+.slider {
+  margin-bottom: 10px;
+}
+
+.noise {
+  margin-bottom: 0;
+}
+
+.slider_title {
+  margin-bottom: 24px;
+  font-weight: 600;
+  font-size: config.$font-size;
+}
+
+.slider_label {
+  padding-block: 4px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.slider_input {
+  padding-inline: 5px;
+  max-width: 50px;
+  flex: 0;
+  background-color: transparent;
+  border: 1px solid config.$colors-button_border;
+  color: config.$colors-gray;
+  @include lib.border-radius(3px);
+  font-size: config.$font-size_sm;
+  line-height: 135%;
+
+  &_max {
+    margin-left: auto;
+  }
+}
+
+.noise_slider {
+  margin-top: 12px;
+  max-width: 106px;
+}
+
+.noise {
+  display: flex;
+  justify-content: space-between;
+}
+
+.noise_label {
+  position: relative;
+  cursor: pointer;
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    width: 4px;
+    height: 20px;
+    background-color: config.$colors-yellow;
+
+    .noise_input:checked + & {
+      @include lib.state-checked;
+      filter: brightness(100);
+    }
+  }
+
+  &:nth-of-type(n + 6)::before {
+    background-color: config.$colors-background_button__light;
+  }
+
+  &:nth-of-type(5n)::before {
+    height: 26px;
+  }
+}
+
+.slider_min_max {
+  display: flex;
+  justify-content: space-between;
+  font-size: config.$font-size;
+  color: config.$colors-gray;
+  font-size: config.$font-size_sm;
+  line-height: 135%;
 }

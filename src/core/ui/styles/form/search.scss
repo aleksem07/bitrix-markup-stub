@@ -1,16 +1,23 @@
 @use '../core/config/scss' as config;
 
+.container {
+  width: 100%;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  grid-area: search;
+}
+
 .search {
   width: 100%;
   position: relative;
-  grid-area: search;
 }
 
 .search_label {
 }
 
 .search_input {
-  padding-block: 13px;
+  padding-block: 14px;
   padding-left: 49px;
   position: relative;
   width: 100%;

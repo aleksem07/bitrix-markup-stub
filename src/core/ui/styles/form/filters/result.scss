@@ -1,0 +1,15 @@
+@use '../core/config/scss' as config;
+
+.result {
+  padding-block: 3px;
+  grid-area: results;
+  font-size: config.$font-size_sm;
+  line-height: 135%;
+  font-weight: 600;
+}
+
+.result_title {
+  font-family: config.$font-primary;
+  font-weight: 600;
+  line-height: 135%;
+}

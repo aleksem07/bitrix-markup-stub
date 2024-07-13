@@ -1,0 +1,93 @@
+@use '../core/config/scss' as config;
+@use '../core/lib/scss' as lib;
+
+.checkboxes {
+  margin-top: 23px;
+  margin-inline: -2px 6px;
+  padding-block: 13px 30px;
+  padding-inline: 10px 22px;
+  grid-area: checkboxes;
+  background-color: config.$colors-background_button;
+  @include lib.border-radius;
+  @include lib.border-green;
+
+  background-image: url('/assets/media/plant-big.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: -125px center;
+}
+
+.checkbox {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.checkbox_title {
+  margin-bottom: 10px;
+  font-family: config.$font-primary;
+  font-weight: 600;
+  font-size: config.$font-size_lg;
+}
+
+.checkbox_list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.checkbox_item {
+  padding-left: 20px;
+  display: flex;
+  position: relative;
+}
+
+.checkbox_label {
+  min-width: max-content;
+  font-weight: 600;
+  line-height: 147%;
+  color: config.$colors-gray;
+  cursor: pointer;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+    width: 15px;
+    height: 15px;
+    border: 1px solid config.$colors-gray;
+    background-color: transparent;
+    @include lib.border-radius(2px);
+  }
+
+  &:has(.checkbox_input:checked) {
+    color: config.$colors-white;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translate(0, -50%);
+      width: 15px;
+      height: 15px;
+      border: 1px solid config.$colors-white;
+      @include lib.border-radius(2px);
+      background-color: transparent;
+      box-shadow: inset 3px 5px 12px 0 rgba(255, 255, 255, 0.36),
+        0 10px 27px 0 rgba(30, 29, 46, 0.3);
+      background: #84d52c;
+      background-image: url('data:image/svg+xml;utf8,<svg width="4" height="2" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.09227 7.45034C3.93492 7.45022 3.77914 7.41898 3.63392 7.3584C3.48869 7.29783 3.35689 7.20913 3.24609 7.0974L0.981973 4.83328C0.868444 4.72271 0.778013 4.59068 0.71593 4.44487C0.653847 4.29906 0.62135 4.14237 0.620325 3.9839C0.619301 3.82542 0.649769 3.66832 0.709961 3.52172C0.770153 3.37512 0.85887 3.24194 0.970959 3.12991C1.08305 3.01788 1.21628 2.92923 1.36291 2.86911C1.50954 2.809 1.66666 2.77861 1.82513 2.77972C1.9836 2.78083 2.14028 2.81341 2.28606 2.87556C2.43183 2.93772 2.56381 3.02822 2.67433 3.14181L4.09227 4.56063L7.91109 0.741809C8.13551 0.517389 8.43989 0.391312 8.75727 0.391312C9.07464 0.391312 9.37902 0.517389 9.60344 0.741809C9.82786 0.966229 9.95394 1.27061 9.95394 1.58799C9.95394 1.90536 9.82786 2.20974 9.60344 2.43416L4.93491 7.09916C4.71148 7.32299 4.40852 7.44925 4.09227 7.45034Z" fill="white"/></svg>');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+}
+
+.checkbox_label:has(.checkbox_input:focus-visible) {
+  outline: 1px solid config.$colors-white;
+  outline-offset: 2px;
+}
