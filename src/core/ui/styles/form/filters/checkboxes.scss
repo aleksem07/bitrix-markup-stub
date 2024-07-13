@@ -44,12 +44,12 @@
   }
 
   &::after {
-    right: 20px;
+    right: 0;
     transform: rotate(45deg);
   }
 
   &::before {
-    right: 26px;
+    right: 6px;
     transform: rotate(-45deg);
   }
 
