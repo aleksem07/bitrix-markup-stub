@@ -23,11 +23,50 @@
   flex-direction: column;
 }
 
-.checkbox_title {
+.title_label {
   margin-bottom: 10px;
   font-family: config.$font-primary;
   font-weight: 600;
   font-size: config.$font-size_lg;
+
+  position: relative;
+
+  &::after,
+  &::before {
+    transition: all 0.3s ease;
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 10px;
+    height: 2px;
+    background-color: config.$colors-gray;
+  }
+
+  &::after {
+    right: 20px;
+    transform: rotate(45deg);
+  }
+
+  &::before {
+    right: 26px;
+    transform: rotate(-45deg);
+  }
+
+  &:has(.title_input:checked)::after {
+    transform: rotate(-45deg);
+  }
+
+  &:has(.title_input:checked)::before {
+    transform: rotate(45deg);
+  }
+
+  &:has(.title_input:checked) + .checkbox_list {
+    display: none;
+  }
+}
+
+.title_input {
+  // display: none;
 }
 
 .checkbox_list {
@@ -37,7 +76,7 @@
 }
 
 .checkbox_item {
-  padding-left: 20px;
+  padding-left: 22px;
   display: flex;
   position: relative;
 }

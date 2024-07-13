@@ -1,6 +1,8 @@
 mixin checkbox-group(name, items)
   .checkbox
-    h2.checkbox_title #{name}
+    //- h2.checkbox_title #{name}
+    label.title_label #{name}
+      input.title_input(type="checkbox") 
 
     ul.checkbox_list
       each item in items
