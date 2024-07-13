@@ -1,4 +1,4 @@
-mixin slider(name, id, isMinMax = false)
+mixin slider(name, id, metrics, isMinMax = false)
   .slider_container
     h3.slider_title #{name}
     .slider(id=id)
@@ -11,7 +11,13 @@ mixin slider(name, id, isMinMax = false)
         .slider_label_metrics.max
           label.slider_label(for=`${id}-value-max`)
             input.slider_input(type="number" id=`${id}-value-max` name=`${id}-value-max`)
-      else 
-        .slider_label_metrics.max
-          label.slider_label(for=`${id}-value-max`)
-            input.slider_input(type="number" id=`${id}-value-max` name=`${id}-value-max`)
+      else
+        if metrics === $
+          .slider_label_metrics.max.dollar
+            label.slider_label(for=`${id}-value-max`)
+              input.slider_input(type="number" id=`${id}-value-max` name=`${id}-value-max`)
+        else
+          .slider_label_metrics.max.percent
+            label.slider_label(for=`${id}-value-max`)
+              input.slider_input(type="number" id=`${id}-value-max` name=`${id}-value-max`)
+    
