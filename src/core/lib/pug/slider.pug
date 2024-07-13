@@ -3,11 +3,15 @@ mixin slider(name, id, isMinMax = false)
     h3.slider_title #{name}
     .slider(id=id)
     .slider_label_box
+    
       if isMinMax
-        label.slider_label(for=`${id}-value-min`) 
-          input.slider_input(type="number" id=`${id}-value-min` name=`${id}-value-min`)
-        label.slider_label(for=`${id}-value-max`)
-          input.slider_input.slider_input_max(type="number" id=`${id}-value-max` name=`${id}-value-max`)
+        .slider_label_metrics
+          label.slider_label(for=`${id}-value-min`) 
+            input.slider_input(type="number" id=`${id}-value-min` name=`${id}-value-min`)
+        .slider_label_metrics.max
+          label.slider_label(for=`${id}-value-max`)
+            input.slider_input(type="number" id=`${id}-value-max` name=`${id}-value-max`)
       else 
-        label.slider_label(for=`${id}-value-max`)
-          input.slider_input.slider_input_max(type="number" id=`${id}-value-max` name=`${id}-value-max`)
+        .slider_label_metrics.max
+          label.slider_label(for=`${id}-value-max`)
+            input.slider_input(type="number" id=`${id}-value-max` name=`${id}-value-max`)
