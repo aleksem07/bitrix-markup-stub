@@ -3,102 +3,330 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style type="text/css">
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      transition: 0.2s;
-    
-      &::-webkit-scrollbar {
-        width: 8px;
-      }
-    
-      &::-webkit-scrollbar-track {
-        background-color: #000;
-      }
-    
-      &::-webkit-scrollbar-thumb {
-        background-color: #fff;
-      }    
-    }
-    
-    html {
-      background-color: #171722;
-      color: #fff;
-      font-size: 16px;
-      font-family: sans-serif;
-    }
-    
-    body {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 12px;
-      min-height: 100vh;
-    }
-    
-    h1 {
-      font-size: 24px;
-      text-transform: uppercase;
-    }
-    
-    a {
-      color: inherit;
-    }
-    
-    a:hover,
-    a:active {
-      opacity: 0.6;
-    }
-    
-    .header,
-    .footer {
-      width: 100%;
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      padding: 16px;
-    }
-    
-    .header {
-      justify-content: space-between;
-    }
-    
-    .logo {
-      max-width: 48px;
-      max-height: 48px;
-      object-fit: contain;
-      object-position: center;
-    }
-    
-    .main {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      padding: 16px;
-      width: 100%;
-      max-width: 1280px;
-    }
-    
-    h1 {
-      margin-bottom: 24px;
-    }
-    
-    .footer {
-      margin-top: auto;
-    }
-    
-  </style>
+  <link rel="stylesheet" href="css/index.css">
   <title>Marketplace
   </title>
   <body>
-    <div class="header">
-      <h2 class="logoa">Marketplace</h2><a href="https://spiks.tech/" target="blank" rel="nofollow"> </a><img class="logo" src="assets/media/spiks-logo.svg">
+    <div class="layout">
+      <div class="layout__header">
+      </div>
+      <div class="layout__main">
+        <h1 class="visually-hidden">Marketplace test work</h1>
+        <form class="form" action="https://httpbin.org/post" method="POST">
+          <div class="container">
+            <h2 class="logo">Marketplace</h2>
+            <div class="search">
+              <label class="search_label" for="search">
+                <input class="search_input" type="text" id="search" name="search" placeholder="Search for a product, flower, etc">
+                <svg class="icon" width="20" height="20" viewBox="0 0 20 20">
+                  <use xlink:href="/assets/icons/default/sprite.svg#search"></use>
+                </svg>
+              </label>
+            </div>
+          </div>
+          <div class="filter_category category">
+            <label class="category_label" for="buds">
+              <svg class="icon" width="20" height="20" viewBox="0 0 20 20">
+                <use xlink:href="/assets/icons/default/sprite.svg#plant"></use>
+              </svg>
+              <input class="category_input visually-hidden" type="checkbox" id="buds" name="categories[]" value="buds" checked>Buds
+            </label>
+            <label class="category_label" for="edible">
+              <svg class="icon" width="20" height="20" viewBox="0 0 20 20">
+                <use xlink:href="/assets/icons/default/sprite.svg#plant"></use>
+              </svg>
+              <input class="category_input visually-hidden" type="checkbox" id="edible" name="categories[]" value="edible">Edible
+            </label>
+            <label class="category_label" for="non-edible">
+              <svg class="icon" width="20" height="20" viewBox="0 0 20 20">
+                <use xlink:href="/assets/icons/default/sprite.svg#plant"></use>
+              </svg>
+              <input class="category_input visually-hidden" type="checkbox" id="non-edible" name="categories[]" value="non-edible">Non Edible
+            </label>
+            <label class="category_label" for="concentrate">
+              <svg class="icon" width="20" height="20" viewBox="0 0 20 20">
+                <use xlink:href="/assets/icons/default/sprite.svg#plant"></use>
+              </svg>
+              <input class="category_input visually-hidden" type="checkbox" id="concentrate" name="categories[]" value="concentrate">Concentrate
+            </label>
+          </div>
+          <div class="sliders">
+            <div class="slider_container">
+              <h3 class="slider_title">Price Range</h3>
+              <div class="slider" id="price-slider"></div>
+              <div class="slider_label_box">
+                <div class="slider_label_metrics">
+                  <label class="slider_label" for="price-slider-value-min"> 
+                    <input class="slider_input" type="number" id="price-slider-value-min" name="price-slider-value-min"/>
+                  </label>
+                </div>
+                <div class="slider_label_metrics max">
+                  <label class="slider_label" for="price-slider-value-max">
+                    <input class="slider_input" type="number" id="price-slider-value-max" name="price-slider-value-max"/>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="slider_container">
+              <h3 class="slider_title">THC, %</h3>
+              <div class="slider" id="thc"></div>
+              <div class="slider_label_box">
+                <div class="slider_label_metrics max percent">
+                  <label class="slider_label" for="thc-value-max">
+                    <input class="slider_input" type="number" id="thc-value-max" name="thc-value-max"/>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="slider_container">
+              <h3 class="slider_title">CBD, %</h3>
+              <div class="slider" id="cbd"></div>
+              <div class="slider_label_box">
+                <div class="slider_label_metrics max percent">
+                  <label class="slider_label" for="cbd-value-max">
+                    <input class="slider_input" type="number" id="cbd-value-max" name="cbd-value-max"/>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="slider_container noise_slider">
+              <h3 class="slider_title">Noise</h3>
+              <div class="slider noise">
+                <input class="noise_input visually-hidden" type="radio" id="10" name="noise" value="10">
+                <label class="noise_label" for="10"></label>
+                <input class="noise_input visually-hidden" type="radio" id="20" name="noise" value="20">
+                <label class="noise_label" for="20"></label>
+                <input class="noise_input visually-hidden" type="radio" id="30" name="noise" value="30">
+                <label class="noise_label" for="30"></label>
+                <input class="noise_input visually-hidden" type="radio" id="40" name="noise" value="40">
+                <label class="noise_label" for="40"></label>
+                <input class="noise_input visually-hidden" type="radio" id="50" name="noise" value="50">
+                <label class="noise_label" for="50"></label>
+                <input class="noise_input visually-hidden" type="radio" id="60" name="noise" value="60">
+                <label class="noise_label" for="60"></label>
+                <input class="noise_input visually-hidden" type="radio" id="70" name="noise" value="70">
+                <label class="noise_label" for="70"></label>
+                <input class="noise_input visually-hidden" type="radio" id="80" name="noise" value="80">
+                <label class="noise_label" for="80"></label>
+                <input class="noise_input visually-hidden" type="radio" id="90" name="noise" value="90">
+                <label class="noise_label" for="90"></label>
+                <input class="noise_input visually-hidden" type="radio" id="100" name="noise" value="100">
+                <label class="noise_label" for="100"></label>
+              </div>
+              <div class="slider_min_max">
+                <p>min</p>
+                <p>max</p>
+              </div>
+            </div>
+          </div>
+          <div class="result">
+            <h3 class="result_title">1034,5 Results</h3>
+          </div>
+          <div class="checkboxes">
+            <div class="checkbox">
+              <label class="title_label">Classification
+                <input class="title_input visually-hidden" type="checkbox"/>
+              </label>
+              <ul class="checkbox_list">
+                <li class="checkbox_item">
+                  <label class="checkbox_label" for="100%Indica">100% Indica
+                    <input class="checkbox_input visually-hidden" type="checkbox" id="100%Indica" name="sort" value="100% Indica" checked="checked"/>
+                  </label>
+                </li>
+                <li class="checkbox_item">
+                  <label class="checkbox_label" for="100%Sativa">100% Sativa
+                    <input class="checkbox_input visually-hidden" type="checkbox" id="100%Sativa" name="sort" value="100% Sativa"/>
+                  </label>
+                </li>
+                <li class="checkbox_item">
+                  <label class="checkbox_label" for="&gt;50%Indica">&gt;50% Indica
+                    <input class="checkbox_input visually-hidden" type="checkbox" id="&gt;50%Indica" name="sort" value="&gt;50% Indica"/>
+                  </label>
+                </li>
+                <li class="checkbox_item">
+                  <label class="checkbox_label" for="&gt;50%Sativa">&gt;50% Sativa
+                    <input class="checkbox_input visually-hidden" type="checkbox" id="&gt;50%Sativa" name="sort" value="&gt;50% Sativa"/>
+                  </label>
+                </li>
+              </ul>
+            </div>
+            <div class="checkbox">
+              <label class="title_label">Production Method
+                <input class="title_input visually-hidden" type="checkbox"/>
+              </label>
+              <ul class="checkbox_list">
+                <li class="checkbox_item">
+                  <label class="checkbox_label" for="Indoor">Indoor
+                    <input class="checkbox_input visually-hidden" type="checkbox" id="Indoor" name="sort" value="Indoor" checked="checked"/>
+                  </label>
+                </li>
+                <li class="checkbox_item">
+                  <label class="checkbox_label" for="Outdoor">Outdoor
+                    <input class="checkbox_input visually-hidden" type="checkbox" id="Outdoor" name="sort" value="Outdoor"/>
+                  </label>
+                </li>
+                <li class="checkbox_item">
+                  <label class="checkbox_label" for="Greenhouse">Greenhouse
+                    <input class="checkbox_input visually-hidden" type="checkbox" id="Greenhouse" name="sort" value="Greenhouse"/>
+                  </label>
+                </li>
+                <li class="checkbox_item">
+                  <label class="checkbox_label" for="LightDeprivation">Light Deprivation
+                    <input class="checkbox_input visually-hidden" type="checkbox" id="LightDeprivation" name="sort" value="Light Deprivation"/>
+                  </label>
+                </li>
+                <li class="checkbox_item">
+                  <label class="checkbox_label" for="MixedLight">Mixed Light
+                    <input class="checkbox_input visually-hidden" type="checkbox" id="MixedLight" name="sort" value="Mixed Light"/>
+                  </label>
+                </li>
+                <li class="checkbox_item">
+                  <label class="checkbox_label" for="Other">Other
+                    <input class="checkbox_input visually-hidden" type="checkbox" id="Other" name="sort" value="Other"/>
+                  </label>
+                </li>
+              </ul>
+            </div>
+            <div class="checkbox">
+              <label class="title_label">Size
+                <input class="title_input visually-hidden" type="checkbox"/>
+              </label>
+              <ul class="checkbox_list">
+                <li class="checkbox_item">
+                  <label class="checkbox_label" for="Flower">Flower
+                    <input class="checkbox_input visually-hidden" type="checkbox" id="Flower" name="sort" value="Flower" checked="checked"/>
+                  </label>
+                </li>
+                <li class="checkbox_item">
+                  <label class="checkbox_label" for="Pre-RollFlower">Pre-Roll Flower
+                    <input class="checkbox_input visually-hidden" type="checkbox" id="Pre-RollFlower" name="sort" value="Pre-Roll Flower"/>
+                  </label>
+                </li>
+                <li class="checkbox_item">
+                  <label class="checkbox_label" for="Pre-RollInfused">Pre-Roll Infused
+                    <input class="checkbox_input visually-hidden" type="checkbox" id="Pre-RollInfused" name="sort" value="Pre-Roll Infused"/>
+                  </label>
+                </li>
+                <li class="checkbox_item">
+                  <label class="checkbox_label" for="Pre-RollLeaf">Pre-Roll Leaf
+                    <input class="checkbox_input visually-hidden" type="checkbox" id="Pre-RollLeaf" name="sort" value="Pre-Roll Leaf"/>
+                  </label>
+                </li>
+                <li class="checkbox_item">
+                  <label class="checkbox_label" for="Shake">Shake
+                    <input class="checkbox_input visually-hidden" type="checkbox" id="Shake" name="sort" value="Shake"/>
+                  </label>
+                </li>
+                <li class="checkbox_item">
+                  <label class="checkbox_label" for="Smalls">Smalls
+                    <input class="checkbox_input visually-hidden" type="checkbox" id="Smalls" name="sort" value="Smalls"/>
+                  </label>
+                </li>
+                <li class="checkbox_item">
+                  <label class="checkbox_label" for="Trim">Trim
+                    <input class="checkbox_input visually-hidden" type="checkbox" id="Trim" name="sort" value="Trim"/>
+                  </label>
+                </li>
+                <li class="checkbox_item">
+                  <label class="checkbox_label" for="Keef">Keef
+                    <input class="checkbox_input visually-hidden" type="checkbox" id="Keef" name="sort" value="Keef"/>
+                  </label>
+                </li>
+                <li class="checkbox_item">
+                  <label class="checkbox_label" for="FreshFrozen">Fresh Frozen
+                    <input class="checkbox_input visually-hidden" type="checkbox" id="FreshFrozen" name="sort" value="Fresh Frozen"/>
+                  </label>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="checked">
+            <ul class="checked_list"></ul>
+          </div>
+          <div class="sort">
+            <div class="sort_drop">
+              <label class="sort_drop_label">
+                <input class="sort_drop_input visually-hidden" type="checkbox">
+                <svg class="icon sort_drop_icon" width="20" height="20" viewBox="0 0 20 20">
+                  <use xlink:href="/assets/icons/default/sprite.svg#filter"></use>
+                </svg>
+              </label>
+            </div>
+            <div class="sort_radios">
+              <h3 class="sort_title">Sort by:</h3>
+              <ul class="sort_list">
+                <li class="sort_item">
+                  <label class="sort_label" for="Date(Newfirst)">Date (New first)
+                    <input class="sort_input visually-hidden" type="radio" id="Date(Newfirst)" name="sort" value="Date (New first)">
+                    <svg class="icon sort_icon" width="24" height="24" viewBox="0 0 24 24">
+                      <use xlink:href="/assets/icons/default/sprite.svg#calendar"></use>
+                    </svg>
+                  </label>
+                </li>
+                <li class="sort_item">
+                  <label class="sort_label" for="Date(Oldfirst)">Date (Old first)
+                    <input class="sort_input visually-hidden" type="radio" id="Date(Oldfirst)" name="sort" value="Date (Old first)">
+                    <svg class="icon sort_icon" width="24" height="24" viewBox="0 0 24 24">
+                      <use xlink:href="/assets/icons/default/sprite.svg#calendar"></use>
+                    </svg>
+                  </label>
+                </li>
+                <li class="sort_item">
+                  <label class="sort_label" for="Price(Highfirst)">Price (High first)
+                    <input class="sort_input visually-hidden" type="radio" id="Price(Highfirst)" name="sort" value="Price (High first)">
+                    <svg class="icon sort_icon" width="24" height="24" viewBox="0 0 24 24">
+                      <use xlink:href="/assets/icons/default/sprite.svg#arrow-up"></use>
+                    </svg>
+                  </label>
+                </li>
+                <li class="sort_item">
+                  <label class="sort_label" for="Price(Lowfirst)">Price (Low first)
+                    <input class="sort_input visually-hidden" type="radio" id="Price(Lowfirst)" name="sort" value="Price (Low first)">
+                    <svg class="icon sort_icon" width="24" height="24" viewBox="0 0 24 24">
+                      <use xlink:href="/assets/icons/default/sprite.svg#arrow-down"></use>
+                    </svg>
+                  </label>
+                </li>
+                <li class="sort_item">
+                  <label class="sort_label" for="TotalTHC(Highfirst)">Total THC (High first)
+                    <input class="sort_input visually-hidden" type="radio" id="TotalTHC(Highfirst)" name="sort" value="Total THC (High first)">
+                    <svg class="icon sort_icon" width="24" height="24" viewBox="0 0 24 24">
+                      <use xlink:href="/assets/icons/default/sprite.svg#thc-high"></use>
+                    </svg>
+                  </label>
+                </li>
+                <li class="sort_item">
+                  <label class="sort_label" for="TotalTHC(Lowfirst)">Total THC (Low first)
+                    <input class="sort_input visually-hidden" type="radio" id="TotalTHC(Lowfirst)" name="sort" value="Total THC (Low first)">
+                    <svg class="icon sort_icon" width="24" height="24" viewBox="0 0 24 24">
+                      <use xlink:href="/assets/icons/default/sprite.svg#thc-low"></use>
+                    </svg>
+                  </label>
+                </li>
+                <li class="sort_item">
+                  <label class="sort_label" for="TotalCBD(Highfirst)">Total CBD (High first)
+                    <input class="sort_input visually-hidden" type="radio" id="TotalCBD(Highfirst)" name="sort" value="Total CBD (High first)">
+                    <svg class="icon sort_icon" width="24" height="24" viewBox="0 0 24 24">
+                      <use xlink:href="/assets/icons/default/sprite.svg#cbd-high"></use>
+                    </svg>
+                  </label>
+                </li>
+                <li class="sort_item">
+                  <label class="sort_label" for="TotalCBD(Lowfirst)">Total CBD (Low first)
+                    <input class="sort_input visually-hidden" type="radio" id="TotalCBD(Lowfirst)" name="sort" value="Total CBD (Low first)">
+                    <svg class="icon sort_icon" width="24" height="24" viewBox="0 0 24 24">
+                      <use xlink:href="/assets/icons/default/sprite.svg#cbd-low"></use>
+                    </svg>
+                  </label>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="layout__footer">
+      </div>
     </div>
-    <div class="main">
-      <h1>Карта проекта</h1><a href="ui.html">ui</a>
-    </div>
-    <div class="footer"><a href="https://spiks.tech/feedback/" target="blank" rel="nofollow">покумекать</a></div>
+    <script src="js/index.js"></script>
   </body>
 </html>
