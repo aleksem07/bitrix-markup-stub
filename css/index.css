@@ -475,7 +475,7 @@ h3 + .slider .noUi-tooltip::after {
   background-color: #353542;
   border-radius: 10px;
   position: relative;
-  background-image: url("/public/assets/media/plant-big.svg");
+  background-image: url("../assets/media/plant-big.svg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: -125px center;
