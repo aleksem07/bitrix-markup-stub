@@ -26,6 +26,12 @@
   &:has(.category_input:checked) {
     @include lib.state-checked;
   }
+
+  @media (max-width: config.$lg) {
+    font-size: config.$font-size_sm;
+    gap: 4px;
+    padding: 7px;
+  }
 }
 
 @include lib.state-focus-visible('category');

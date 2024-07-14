@@ -15,12 +15,31 @@
   background-size: contain;
   background-repeat: no-repeat;
   background-position: -125px center;
+
+  @media (max-width: config.$lg) {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+  }
+
+  @media (max-width: config.$ssm) {
+    flex-direction: column;
+  }
 }
 
 .checkbox {
   margin-bottom: 15px;
   display: flex;
   flex-direction: column;
+
+  @media (max-width: config.$lg) {
+    flex: 1;
+    max-width: 30%;
+  }
+
+  @media (max-width: config.$ssm) {
+    max-width: none;
+  }
 }
 
 .title_label {
@@ -72,6 +91,11 @@
   display: flex;
   flex-direction: column;
   gap: 6px;
+
+  @media (max-width: config.$ssm) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }
 
 .checkbox_item {
