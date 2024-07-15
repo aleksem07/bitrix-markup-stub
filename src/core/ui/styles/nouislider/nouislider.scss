@@ -32,7 +32,13 @@ h3 + .slider {
     @include lib.state-hover;
   }
 
+  .noUi-touch-area:hover + .noUi-tooltip {
+    opacity: 1;
+  }
+
   .noUi-tooltip {
+    transition: opacity 0.3s ease;
+    opacity: 0;
     padding: 2px 5px;
     width: 51px;
     height: 26px;
