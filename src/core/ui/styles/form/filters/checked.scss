@@ -6,7 +6,7 @@
   width: 100%;
   display: flex;
   align-items: baseline;
-  column-gap: 30px;
+  column-gap: 29px;
 }
 
 .checked_list {
@@ -15,7 +15,6 @@
   overflow-x: auto;
   white-space: nowrap;
   scrollbar-width: auto;
-  padding: 5px;
 
   &::-webkit-scrollbar {
     height: 5px;
