@@ -4,12 +4,40 @@
 .checked {
   grid-area: checked;
   width: 100%;
+  display: flex;
+  align-items: baseline;
+  column-gap: 30px;
 }
 
 .checked_list {
   display: flex;
-  flex-wrap: wrap;
   gap: 10px;
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: auto;
+  padding: 5px;
+
+  &::-webkit-scrollbar {
+    height: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: config.$colors-sort-background;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: config.$colors-yellow;
+    @include lib.border-radius;
+  }
+
+  &:hover {
+    &::-webkit-scrollbar-thumb {
+      cursor: pointer;
+    }
+    &::-webkit-scrollbar-track {
+      cursor: pointer;
+    }
+  }
 }
 
 .checked_item {
