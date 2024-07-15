@@ -3,7 +3,7 @@ addSlider('price-slider', 'price-slider-value-min', 'price-slider-value-max', {
   start: [0, 600],
   connect: true,
   tooltips: [
-    false,
+    { to: value => `${Math.round(value)} $`, from: value => value },
     { to: value => `${Math.round(value)} $`, from: value => value },
   ],
   range: {
