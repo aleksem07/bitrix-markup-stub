@@ -1195,17 +1195,18 @@ var addSlider = function addSlider(sliderId, minId, maxId, options) {
     }
   });
 };
+var getTooltipValue = {
+  to: function to(value) {
+    return "".concat(Math.round(value), " $");
+  },
+  from: function from(value) {
+    return value;
+  }
+};
 addSlider('price-slider', 'price-slider-value-min', 'price-slider-value-max', {
   start: [0, 600],
   connect: true,
-  tooltips: [false, {
-    to: function to(value) {
-      return "".concat(Math.round(value), " $");
-    },
-    from: function from(value) {
-      return value;
-    }
-  }],
+  tooltips: [getTooltipValue, getTooltipValue],
   range: {
     min: 0,
     max: 999

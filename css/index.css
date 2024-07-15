@@ -6,11 +6,11 @@
   width: 100%;
   display: -ms-grid;
   display: grid;
-  grid-template-areas: "search search search search search categories categories categories categories categories categories categories" "sliders sliders sliders sliders sliders sliders sliders sliders sliders sliders sliders sort" "results checked checked checked checked checked checked checked checked checked checked sort" "checkboxes checked checked checked checked checked checked checked checked checked checked sort" "checkboxes . . . . . . . . . . sort" "checkboxes . . . . . . . . . . sort";
+  grid-template-areas: "search search search search search categories categories categories categories categories categories categories" "sliders sliders sliders sliders sliders sliders sliders sliders sliders sliders sliders sort" "checked checked checked checked checked checked checked checked checked checked checked sort" "checkboxes . . . . . . . . . . sort" "checkboxes . . . . . . . . . . sort" "checkboxes . . . . . . . . . . sort";
   -ms-grid-columns: 243px 10px 1fr 10px 1fr 10px 1fr 10px 141px 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 217px;
   grid-template-columns: 243px repeat(3, 1fr) 141px repeat(6, 1fr) 217px;
-  -ms-grid-rows: auto;
-  grid-template-rows: auto;
+  -ms-grid-rows: auto 10px auto 10px 30px 10px auto;
+  grid-template-rows: auto auto 30px auto;
   gap: 10px;
 }
 
@@ -248,6 +248,20 @@ input[type=number]:focus-visible {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  position: relative;
+}
+
+.noise_gradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: -webkit-gradient(linear, left top, right top, from(#ffd996), to(#5aaa46));
+  background: linear-gradient(to right, #ffd996, #5aaa46);
+  width: 50%;
+  height: 26px;
+  opacity: 0.5;
+  mix-blend-mode: darken;
+  pointer-events: none;
 }
 
 .noise_label {
@@ -262,7 +276,7 @@ input[type=number]:focus-visible {
   width: 0;
   width: 4px;
   height: 20px;
-  background-color: #bdaf32;
+  background-color: #ffd996;
 }
 
 .noise_input:checked + .noise_label::before {
@@ -337,7 +351,14 @@ h3 + .slider .noUi-handle:hover {
   box-shadow: 0 5px 15px 1px rgba(132, 213, 44, 0.36);
 }
 
+h3 + .slider .noUi-touch-area:hover + .noUi-tooltip {
+  opacity: 1;
+}
+
 h3 + .slider .noUi-tooltip {
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+  opacity: 0;
   padding: 2px 5px;
   width: 51px;
   height: 26px;
@@ -362,10 +383,8 @@ h3 + .slider .noUi-tooltip::after {
 }
 
 .result {
-  -ms-grid-row: 5;
-  -ms-grid-column: 1;
   padding-block: 3px;
-  grid-area: results;
+  white-space: nowrap;
   font-size: 14px;
   line-height: 135%;
   font-weight: 600;
@@ -379,20 +398,51 @@ h3 + .slider .noUi-tooltip::after {
 
 .checked {
   -ms-grid-row: 5;
-  -ms-grid-row-span: 3;
-  -ms-grid-column: 3;
-  -ms-grid-column-span: 19;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 21;
   grid-area: checked;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+  -webkit-column-gap: 29px;
+  -moz-column-gap: 29px;
+  column-gap: 29px;
 }
 
 .checked_list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
   gap: 10px;
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: auto;
+}
+
+.checked_list::-webkit-scrollbar {
+  height: 5px;
+}
+
+.checked_list::-webkit-scrollbar-track {
+  background-color: #212129;
+}
+
+.checked_list::-webkit-scrollbar-thumb {
+  background: -webkit-gradient(linear, left top, right top, from(#5aaa46), color-stop(65%, #ffd996), to(#5aaa46));
+  background: linear-gradient(90deg, #5aaa46, #ffd996 65%, #5aaa46);
+  border-radius: 10px;
+}
+
+.checked_list:hover::-webkit-scrollbar-thumb {
+  cursor: pointer;
+}
+
+.checked_list:hover::-webkit-scrollbar-track {
+  cursor: pointer;
 }
 
 .checked_item {
