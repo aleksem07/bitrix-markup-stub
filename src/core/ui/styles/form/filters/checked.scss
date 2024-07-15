@@ -26,7 +26,12 @@
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: config.$colors-yellow;
+    background: linear-gradient(
+      90deg,
+      config.$colors-green,
+      config.$colors-yellow 65%,
+      config.$colors-green
+    );
     @include lib.border-radius;
   }
 

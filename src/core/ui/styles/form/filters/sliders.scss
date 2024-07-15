@@ -95,6 +95,23 @@ input[type='number'] {
 .noise {
   display: flex;
   justify-content: space-between;
+  position: relative;
+}
+
+.noise_gradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(
+    to right,
+    config.$colors-yellow,
+    config.$colors-green
+  );
+  width: 50%;
+  height: 26px;
+  opacity: 0.5;
+  mix-blend-mode: darken;
+  pointer-events: none;
 }
 
 .noise_label {
