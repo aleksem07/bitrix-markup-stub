@@ -1,0 +1,45 @@
+@use '../core/config/scss' as config;
+@use '../core/lib/scss' as lib;
+
+.container {
+  width: 100%;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  grid-area: search;
+}
+
+.search {
+  width: 100%;
+  position: relative;
+}
+
+.search_label {
+}
+
+.search_input {
+  padding-block: 14px;
+  padding-left: 49px;
+  position: relative;
+  width: 100%;
+
+  background-color: transparent;
+  border: 1px solid;
+  border-radius: 10px;
+
+  font-family: config.$font-primary;
+  color: config.$colors-gray;
+
+  & + .icon {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+  }
+
+  &:focus-visible {
+    transition: outline 0.3s ease;
+    outline: 1px solid config.$colors-white;
+    outline-offset: 2px;
+  }
+}

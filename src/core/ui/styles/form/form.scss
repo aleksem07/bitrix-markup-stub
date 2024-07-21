@@ -1,0 +1,28 @@
+@use '../core/config/scss' as config;
+@use '../core/lib/scss' as lib;
+
+.form {
+  margin: 0 auto;
+  padding-inline: 6px;
+  max-width: config.$xl;
+  min-width: config.$ssm;
+  width: 100%;
+  @include lib.grid-col;
+
+  grid-template-areas:
+    'search search search search search categories categories categories categories categories categories categories'
+    'sliders sliders sliders sliders sliders sliders sliders sliders sliders sliders sliders sort'
+    'checked checked checked checked checked checked checked checked checked checked checked sort'
+    'checkboxes . . . . . . . . . . sort'
+    'checkboxes . . . . . . . . . . sort'
+    'checkboxes . . . . . . . . . . sort';
+  grid-template-columns: 243px repeat(3, 1fr) 141px repeat(6, 1fr) 217px;
+  grid-template-rows: auto auto 30px auto;
+  gap: 10px;
+
+  @media (max-width: config.$lg) {
+    display: flex;
+    gap: 25px;
+    flex-direction: column;
+  }
+}

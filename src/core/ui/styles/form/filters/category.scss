@@ -1,0 +1,37 @@
+@use '../core/config/scss' as config;
+@use '../core/lib/scss' as lib;
+
+.filter_category {
+  @include lib.flex-row;
+  align-items: center;
+  gap: 15px;
+  grid-area: categories;
+}
+
+.category_label {
+  padding: 12px 20px;
+  cursor: pointer;
+  min-width: max-content;
+
+  @include lib.flex-row;
+  @include lib.flex-center;
+  gap: 12px;
+  font-weight: 700;
+  font-size: config.$font-size_lg;
+  line-height: 135%;
+  background-color: config.$colors-background_button;
+  @include lib.border-radius;
+  @include lib.border-green;
+
+  &:has(.category_input:checked) {
+    @include lib.state-checked;
+  }
+
+  @media (max-width: config.$lg) {
+    font-size: config.$font-size_sm;
+    gap: 4px;
+    padding: 7px;
+  }
+}
+
+@include lib.state-focus-visible('category');

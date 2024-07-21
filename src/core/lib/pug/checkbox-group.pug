@@ -1,0 +1,13 @@
+mixin checkbox-group(name, items)
+  .checkbox
+    label.title_label #{name}
+      input.title_input.visually-hidden(type="checkbox") 
+
+    ul.checkbox_list
+      each item, idx in items
+        - var formattedName = item.replace(/\s+/g, "");
+        if item.trim() !== ''
+          li.checkbox_item
+
+            label.checkbox_label(for=formattedName) #{item}
+              input.checkbox_input.visually-hidden(type='checkbox' id=formattedName name='sort' value=item checked=idx === 0)

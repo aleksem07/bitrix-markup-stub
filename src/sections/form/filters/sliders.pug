@@ -1,0 +1,14 @@
+.sliders
+  +slider(sliderPriceRange.name, sliderPriceRange.id, sliderPriceRange.metrics, true)
+  +slider(sliderThc.name, sliderThc.id, sliderPriceRange.metrics, false)
+  +slider(sliderCbd.name, sliderCbd.id, sliderPriceRange.metrics, false)
+  .slider_container.noise_slider
+    h3.slider_title Noise
+    .slider.noise
+      each item in noise
+        input.noise_input.visually-hidden(type='radio' id=item name='noise' value=item)
+        label.noise_label(for=item)
+      .noise_gradient
+    .slider_min_max
+      p min
+      p max

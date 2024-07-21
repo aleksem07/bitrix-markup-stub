@@ -1,0 +1,152 @@
+@use '../core/config/scss' as config;
+@use '../core/lib/scss' as lib;
+
+.sliders {
+  margin-block: 18px 0;
+  margin-inline: 0;
+  grid-area: sliders;
+  display: flex;
+  gap: 25px;
+}
+
+.slider_container {
+  width: 19%;
+}
+
+.slider {
+  margin-bottom: 10px;
+}
+
+.noise {
+  margin-bottom: 0;
+}
+
+.slider_title {
+  margin-bottom: 24px;
+  font-weight: 600;
+  font-size: config.$font-size;
+}
+
+.slider_label_box {
+  padding-block: 4px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.slider_label_metrics.max {
+  margin-left: auto;
+}
+
+.slider_label_metrics {
+  position: relative;
+
+  &::after {
+    content: '$';
+    position: absolute;
+    top: 50%;
+    right: 20%;
+    transform: translate(50%, -50%);
+    color: config.$colors-gray;
+    z-index: 1;
+  }
+
+  &.percent::after {
+    content: '%';
+    z-index: 1;
+  }
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  &:focus-visible {
+    transition: outline 0.3s ease;
+    outline: 1px solid config.$colors-white;
+    outline-offset: 2px;
+  }
+}
+
+.slider_input {
+  outline-offset: -5px;
+  padding-inline: 5px;
+  max-width: 50px;
+  flex: 0;
+  background-color: config.$colors-sort-background;
+  border: 1px solid config.$colors-button_border;
+  color: config.$colors-gray;
+  @include lib.border-radius(3px);
+  font-size: config.$font-size_sm;
+  line-height: 135%;
+}
+
+.noise_slider {
+  margin-top: 12px;
+  max-width: 106px;
+}
+
+.noise {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.noise_gradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(
+    to right,
+    config.$colors-yellow,
+    config.$colors-green
+  );
+  width: 50%;
+  height: 26px;
+  opacity: 0.5;
+  mix-blend-mode: darken;
+  pointer-events: none;
+}
+
+.noise_label {
+  position: relative;
+  cursor: pointer;
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    width: 4px;
+    height: 20px;
+    background-color: config.$colors-yellow;
+
+    .noise_input:checked + & {
+      @include lib.state-checked;
+      filter: brightness(100);
+    }
+  }
+
+  &:nth-of-type(n + 6)::before {
+    background-color: config.$colors-background_button__light;
+  }
+
+  &:nth-of-type(5n)::before {
+    height: 26px;
+  }
+}
+
+.slider_min_max {
+  display: flex;
+  justify-content: space-between;
+  font-size: config.$font-size;
+  color: config.$colors-gray;
+  font-size: config.$font-size_sm;
+  line-height: 135%;
+}

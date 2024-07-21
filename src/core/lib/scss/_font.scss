@@ -1,9 +1,10 @@
-@mixin font($name, $weight, $fileName) {
+@mixin font($name, $weight, $fileName, $fontNameFolder: 'proxima-nova') {
   @font-face {
     font-family: $name;
-    src: local("#{$name}"),
-    url("../assets/fonts/#{$name}/#{$fileName}.woff2") format("woff2"),
-    url("../assets/fonts/#{$name}/#{$fileName}.woff") format("woff");
+    src: local('#{$name}'),
+      url('../assets/fonts/#{$fontNameFolder}/#{$fileName}.woff2')
+        format('woff2'),
+      url('../assets/fonts/#{$fontNameFolder}/#{$fileName}.woff') format('woff');
     font-weight: $weight;
     font-style: normal;
     font-display: swap;

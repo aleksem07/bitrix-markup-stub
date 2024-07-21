@@ -1,0 +1,19 @@
+@keyframes logoFadeIn {
+  0% {
+    transform: translateY(-100px) rotateX(0);
+    opacity: 0;
+  }
+
+  30% {
+    transform: translateY(3px) rotateX(45deg);
+  }
+
+  60% {
+    transform: translateY(-1px);
+  }
+
+  100% {
+    transform: translateY(0) rotateX(0);
+    opacity: 1;
+  }
+}

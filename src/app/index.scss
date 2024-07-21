@@ -1,6 +1,12 @@
 @use '../core/config/scss' as config;
 @use '../core/lib/scss' as lib;
 @use '../core/ui/layout';
+@use '../core/ui/styles';
+@use '../core/vendors/nouislider/nouislider.min';
+
+@include lib.font('Proxima Nova', 400, 'ProximaNova-Regular');
+@include lib.font('Proxima Nova', 600, 'ProximaNova-Semibold');
+@include lib.font('Proxima Nova', 700, 'ProximaNova-Bold');
 
 * {
   margin: 0;
@@ -17,9 +23,38 @@
 
   &::-webkit-scrollbar-thumb {
     background-color: config.$colors-black;
-  }    
+  }
 }
 
 html {
   scroll-behavior: smooth;
+  height: 100%;
+}
+
+body {
+  margin-top: 22px;
+  margin-inline: 1.5%;
+  background-color: config.$colors-background;
+  color: config.$colors-white;
+  font-family: config.$font-primary;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }

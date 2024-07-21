@@ -1,0 +1,17 @@
+.sort
+  .sort_drop
+    label.sort_drop_label
+      input.sort_drop_input.visually-hidden(type='checkbox')
+      +icon('20', 'filter')(class='sort_drop_icon')
+  .sort_radios
+    h3.sort_title Sort by:
+    ul.sort_list
+      each item in sort
+
+        - var formattedName = item.name.replace(/\s+/g, "");
+
+        li.sort_item
+          label.sort_label(for=formattedName) #{item.name}
+            input.sort_input.visually-hidden(type='radio' id=formattedName name='sort' value=item.name)
+            +icon('24', item.icon)(class='sort_icon')
+            
